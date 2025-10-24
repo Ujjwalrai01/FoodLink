@@ -109,22 +109,19 @@
 //   )
 // }
 
-// export default 
+// export default
 
-
-
-
-import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import { useSelector, useDispatch } from 'react-redux';
-import { logout } from '../features/authSlice';
-import RoleBadge from './RoleBadge';
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../features/authSlice";
+import RoleBadge from "./RoleBadge";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
-  const { isAuthenticated, user, role } = useSelector(state => state.auth);
+  const { isAuthenticated, user, role } = useSelector((state) => state.auth);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -142,17 +139,33 @@ function Navbar() {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  (isActive ? 'text-primary' : 'text-gray-600 hover:text-primary') +
-                  ' px-3 py-2 rounded-md text-sm font-medium'
+                  (isActive
+                    ? "text-primary"
+                    : "text-gray-600 hover:text-primary") +
+                  " px-3 py-2 rounded-md text-sm font-medium"
                 }
               >
                 Home
               </NavLink>
               <NavLink
+                to="/profile"
+                className={({ isActive }) =>
+                  (isActive
+                    ? "text-primary"
+                    : "text-gray-600 hover:text-primary") +
+                  " px-3 py-2 rounded-md text-sm font-medium"
+                }
+              >
+                Profile
+              </NavLink>
+
+              <NavLink
                 to="/foodfeed"
                 className={({ isActive }) =>
-                  (isActive ? 'text-primary' : 'text-gray-600 hover:text-primary') +
-                  ' px-3 py-2 rounded-md text-sm font-medium'
+                  (isActive
+                    ? "text-primary"
+                    : "text-gray-600 hover:text-primary") +
+                  " px-3 py-2 rounded-md text-sm font-medium"
                 }
               >
                 Food Feed
@@ -161,8 +174,10 @@ function Navbar() {
                 <NavLink
                   to="/dashboard"
                   className={({ isActive }) =>
-                    (isActive ? 'text-primary' : 'text-gray-600 hover:text-primary') +
-                    ' px-3 py-2 rounded-md text-sm font-medium'
+                    (isActive
+                      ? "text-primary"
+                      : "text-gray-600 hover:text-primary") +
+                    " px-3 py-2 rounded-md text-sm font-medium"
                   }
                 >
                   Dashboard
@@ -171,8 +186,10 @@ function Navbar() {
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  (isActive ? 'text-primary' : 'text-gray-600 hover:text-primary') +
-                  ' px-3 py-2 rounded-md text-sm font-medium'
+                  (isActive
+                    ? "text-primary"
+                    : "text-gray-600 hover:text-primary") +
+                  " px-3 py-2 rounded-md text-sm font-medium"
                 }
               >
                 About
@@ -180,8 +197,10 @@ function Navbar() {
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
-                  (isActive ? 'text-primary' : 'text-gray-600 hover:text-primary') +
-                  ' px-3 py-2 rounded-md text-sm font-medium'
+                  (isActive
+                    ? "text-primary"
+                    : "text-gray-600 hover:text-primary") +
+                  " px-3 py-2 rounded-md text-sm font-medium"
                 }
               >
                 Contact
@@ -222,7 +241,11 @@ function Navbar() {
               className="text-gray-600 hover:text-primary focus:outline-none focus:text-primary"
               aria-label="Toggle menu"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
