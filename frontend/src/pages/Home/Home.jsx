@@ -59,13 +59,13 @@ function Home() {
                   to="/register"
                   className="bg-primary text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-green-700 transition-all shadow-lg hover:shadow-xl"
                 >
-                  Get Started Free
+                  Donors
                 </Link>
                 <Link
                   to="/food/feed"
                   className="bg-white text-primary px-8 py-4 rounded-2xl font-semibold text-lg border-2 border-primary hover:bg-green-50 transition-all"
                 >
-                  Browse Food
+                  Receivers
                 </Link>
               </div>
             </div>
