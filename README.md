@@ -35,7 +35,7 @@ A production-grade, role-based web platform that connects food donors with those
 |------|-------------|--------------|
 | **Individual** | Food donors and recipients | Add/claim food, track personal impact, earn badges |
 | **NGO** | Non-profit organizations | Manage volunteers, receive donations, distribute food |
-| **Small Business** | Restaurants, cafes, stores | List surplus food, track CSR impact, get verified |
+| **Small Business** | Restaurants, cafes, mess | List surplus food, track CSR impact, get verified |
 | **Verifier** | Platform validators | Approve NGOs/businesses, maintain authenticity |
 | **Admin** | Platform administrators | Monitor analytics, manage users, generate reports |
 
