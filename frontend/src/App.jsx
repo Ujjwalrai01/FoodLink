@@ -36,11 +36,21 @@
 
 
 
+import { useEffect } from 'react'
 import { BrowserRouter } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import AppRouter from './router/AppRouter'
 import NotificationToast from './components/NotificationToast'
+import { initializeAuth } from './features/authActions'
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    // Initialize auth from cookies on app startup
+    dispatch(initializeAuth())
+  }, [dispatch])
+
   return (
     <BrowserRouter>
       <NotificationToast />

@@ -1,18 +1,42 @@
-// import { useEffect } from 'react';
-// import { Package, Heart, TrendingUp, Award } from 'lucide-react';
-// import { useSelector, useDispatch } from 'react-redux';
-// import Navbar from '../../components/Navbar';
-// import AnalyticsCard from '../../components/AnalyticsCard';
-// import FoodCard from '../../components/FoodCard';
-// import MapView from '../../components/MapView';
-// import { setImpactData } from '../../features/analyticsSlice';
-// import { setFoodItems } from '../../features/foodSlice';
+import { useState, useEffect, useRef } from "react";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  Circle,
+  useMap,
+} from "react-leaflet";
+import L from "leaflet";
+import {
+  Search,
+  MapPin,
+  Navigation,
+  Layers,
+  ZoomIn,
+  ZoomOut,
+  Filter,
+  Clock,
+  Users,
+  Heart,
+  ChevronDown,
+  X,
+  Menu,
+  Star,
+  TrendingUp,
+} from "lucide-react";
+import "leaflet/dist/leaflet.css";
 
-// function IndividualDashboard() {
-//   const { user } = useSelector(state => state.auth);
-//   const { impactData } = useSelector(state => state.analytics);
-//   const { foodItems } = useSelector(state => state.food);
-//   const dispatch = useDispatch();
+// Fix for default marker icons
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+  iconUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+  shadowUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+});
 
 //   useEffect(() => {
 //     // Mock impact data - replace with real API call
